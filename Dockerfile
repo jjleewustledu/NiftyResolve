@@ -30,11 +30,13 @@ ARG MCR_DEPS='qt5-qtbase qt5-qtbase-gui qt5-qtsvg qt5-qtwebkit qt5-qtwebsockets 
 RUN yum -y install ${MCR_DEPS}
 
 # setup filesystem
-RUN    mkdir /work && mkdir /SubjectsDir && mkdir /export
+RUN    mkdir /work && mkdir /ProjectsDir && mkdir /SubjectsDir && mkdir /export
 ENV    WORK=/work
+ENV    PROJECTS_DIR=/ProjectsDir
 ENV    SUBJECTS_DIR=/SubjectsDir
 ENV    EXPORT=/export
 ENV    TMPDIR=/tmp
+VOLUME $PROJECTS_DIR
 VOLUME $SUBJECTS_DIR
 VOLUME $EXPORT
 
@@ -46,14 +48,6 @@ ENV PATH=$PATH:${MCR_ROOT}/bin
 ENV XAPPLRESDIR=${MCR_ROOT}/v${MCR_VER}/X11/app-defaults
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${MCR_ROOT}/runtime/glnxa64:${MCR_ROOT}/bin/glnxa64:${MCR_ROOT}/sys/os/glnxa64:${MCR_ROOT}/sys/opengl/lib/glnxa64:${MCR_ROOT}/extern/bin/glnxa64
 ENV MCR_CACHE_ROOT=$TMPDIR
-
-# setup 4dfp
-COPY lin64-tools $WORK/lin64-tools
-COPY TRIO_Y_NDC $WORK/TRIO_Y_NDC
-ENV  RELEASE=$WORK/lin64-tools
-ENV  REFDIR=$WORK/TRIO_Y_NDC
-ENV  REFDIR1=$REFDIR
-ENV  PATH=$PATH:$RELEASE
 
 # setup FSL
 RUN  mkdir /fsl
@@ -85,8 +79,15 @@ ENV  PERL5LIB=$MNI_PERL5LIB
 ENV  PATH=$MINC_BIN_DIR:$FREESURFER_HOME/tktools:$FREESURFER_HOME/bin:$PATH
 ENV  FIX_VERTEX_AREA=
 
+# setup 4dfp
+COPY lin64-tools $WORK/lin64-tools
+COPY TRIO_Y_NDC $WORK/TRIO_Y_NDC
+ENV  RELEASE=$WORK/lin64-tools
+ENV  REFDIR=$WORK/TRIO_Y_NDC
+ENV  REFDIR1=$REFDIR
+ENV  PATH=$RELEASE:$PATH
+
 # setup app
-ENV  PPG_SUBJECTS_DIR=$SUBJECTS_DIR
 COPY ConstructResolvedApp/ConstructResolvedApp/for_testing/ConstructResolvedApp \
      $WORK/ConstructResolvedApp
 COPY ConstructResolvedApp/ConstructResolvedApp/for_testing/run_ConstructResolvedApp.sh \
@@ -101,11 +102,12 @@ RUN  chmod a+x $WORK/run_ConstructResolvedApp.sh
 # run_ConstructResolvedApp.sh
 # requires arg $MCR_ROOT; without additional args it operates on defaults:
 # projectsExpr->CCIR_*, sessionsExpr->ses-*, tracer->{'OC*' 'HO*' 'OO*' 'FDG*'}, ac->[].
-WORKDIR    $SUBJECTS_DIR
+WORKDIR    $PROJECTS_DIR
 #ENTRYPOINT ["/work/run_ConstructResolvedApp.sh", "/export/matlab/MCR/R2018b/v95"]
 #CMD [""]
 CMD ["/bin/bash"]
 
 # when ready:
-# > docker push jjleewustledu/niftymcr-image:mcr_7gb
+# > docker push jjleewustledu/niftyresolve-image:20190719
+# > singularity pull docker://jjleewustledu/niftyresolve-image:20190719
 
