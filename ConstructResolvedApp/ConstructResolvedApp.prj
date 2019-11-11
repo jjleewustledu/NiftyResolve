@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="437993826" file="/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp.prj" location="/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp" name="ConstructResolvedApp" preferred-package-location="/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="2684988093" file="/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp.prj" location="/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp" name="ConstructResolvedApp" preferred-package-location="/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp/for_redistribution" preferred-package-type="package.type.install" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>ConstructResolvedApp</param.appname>
     <param.icon />
     <param.icons />
@@ -90,6 +90,7 @@ ${LD_LIBRARY_PATH}:MR/v95/runtime/glnxa64:MR/v95/bin/glnxa64:MR/v95/sys/os/glnxa
     <fileset.package />
     <fileset.depfun>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/asrow.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/asrowdirs.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/assertLexist.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/assertSizeEqual.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/capitalize.m</file>
@@ -176,6 +177,12 @@ ${LD_LIBRARY_PATH}:MR/v95/runtime/glnxa64:MR/v95/bin/glnxa64:MR/v95/sys/os/glnxa
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/trydelete.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/upperFirst.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mfiles/verbose.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/ProjectData.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/SessionData.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/StudyData.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/StudyRegistry.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/SubjectData.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlan/src/+mlan/TracerDirector2.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mldata/src/+mldata/CCIRRadMeasurements.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mldata/src/+mldata/IManualMeasurements.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mldata/src/+mldata/TimingData.m</file>
@@ -239,6 +246,7 @@ ${LD_LIBRARY_PATH}:MR/v95/runtime/glnxa64:MR/v95/bin/glnxa64:MR/v95/sys/os/glnxa
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/CTBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/CarneyUmapBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/CarneyUmapBuilder2.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/CollectionResolveBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/CompositeT4ResolveBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/Fourdfp.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlfourdfp/src/+mlfourdfp/FourdfpInfo.m</file>
@@ -319,7 +327,10 @@ ${LD_LIBRARY_PATH}:MR/v95/runtime/glnxa64:MR/v95/bin/glnxa64:MR/v95/sys/os/glnxa
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/Msktgen.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/PETImagingContext.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/ResamplingRestrictedResolveBuilder.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/SessionResolveBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/StudyRegistry.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/StudyResolveBuilder.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/SubjectResolveBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/TracerBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpet/src/+mlpet/TracerResolveBuilder.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlpipeline/src/+mlpipeline/AbstractBuilder.m</file>
@@ -359,16 +370,17 @@ ${LD_LIBRARY_PATH}:MR/v95/runtime/glnxa64:MR/v95/bin/glnxa64:MR/v95/sys/os/glnxa
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsurfer/src/+mlsurfer/MGH.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsurfer/src/+mlsurfer/MGHInfo.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsystem/src/+mlsystem/DirTool.m</file>
+      <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsystem/src/+mlsystem/DirTool2.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsystem/src/+mlsystem/DirTools.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsystem/src/+mlsystem/FilesystemRegistry.m</file>
       <file>/data/nil-bluearc/raichle/jjlee/MATLAB-Drive/mlsystem/src/+mlsystem/VectorTools.m</file>
       <file>/home2/local/freesurfer_2019mar14/fsfast/toolbox/basename.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="readme.txt" optional="true">/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp/for_testing/readme.txt</file>
-      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="run_ConstructResolvedApp.sh" optional="false">/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp/for_testing/run_ConstructResolvedApp.sh</file>
-      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="splash.png" optional="false">/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp/for_testing/splash.png</file>
-      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="ConstructResolvedApp" optional="false">/home2/jjlee/Docker/NiftyResolve/ConstructResolvedApp/ConstructResolvedApp/for_testing/ConstructResolvedApp</file>
+      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="ConstructResolvedApp" optional="false">/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp/for_testing/ConstructResolvedApp</file>
+      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="splash.png" optional="false">/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp/for_testing/splash.png</file>
+      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="run_ConstructResolvedApp.sh" optional="false">/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp/for_testing/run_ConstructResolvedApp.sh</file>
+      <file location="${PROJECT_ROOT}/ConstructResolvedApp/for_testing" name="readme.txt" optional="true">/home2/jjlee/Docker/ConstructResolved/ConstructResolvedApp/ConstructResolvedApp/for_testing/readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>

@@ -100,14 +100,13 @@ RUN  chmod a+x $WORK/ConstructResolvedApp
 RUN  chmod a+x $WORK/run_ConstructResolvedApp.sh
 
 # run_ConstructResolvedApp.sh
-# requires arg $MCR_ROOT; without additional args it operates on defaults:
-# projectsExpr->CCIR_*, sessionsExpr->ses-*, tracer->{'OC*' 'HO*' 'OO*' 'FDG*'}, ac->[].
+# requires args $MCR_ROOT subjects/sub-S12345/ses-E12345
 WORKDIR    $PROJECTS_DIR
 #ENTRYPOINT ["/work/run_ConstructResolvedApp.sh", "/export/matlab/MCR/R2018b/v95"]
 #CMD [""]
 CMD ["/bin/bash"]
 
 # when ready:
-# > docker push jjleewustledu/niftyresolve-image:20190719
-# > singularity pull docker://jjleewustledu/niftyresolve-image:20190719
+# > docker push jjleewustledu/constructresolved-image:20190723
+# > singularity pull docker://jjleewustledu/constructresolved-image:20190723
 
